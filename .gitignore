@@ -1,0 +1,36 @@
+# Include your project-specific ignores in this file
+# Read about how to use .gitignore: https://help.github.com/articles/ignoring-files
+node_modules
+assets/css/main.min.css.map
+
+.editorconfig
+
+.jshintrc
+
+assets/css/main.min.css
+
+assets/fonts/anoblack-regular-webfont.woff
+
+assets/fonts/anobold-regular-webfont.woff
+
+assets/fonts/anohalf-regular-webfont.woff
+
+assets/fonts/edmondsans-bold-webfont.woff
+
+*.otf
+
+*.ttf
+
+*.woff
+
+assets/fonts/stylesheet.css
+
+assets/fonts/glyphicons-halflings-regular.svg
+
+assets/fonts/glyphicons-halflings-regular.eot
+
+assets/js/scripts.min.js.map
+
+assets/js/scripts.min.js
+
+get-tweets.php
