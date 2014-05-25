@@ -9,9 +9,9 @@
  *
  * ======================================================================== */
 
-	var setXpandImages = function() {
-			$('.xpandimages').css("opacity", 1);
-			$(".xpandimages").each(function() {
+	var setXpandImages = function( eles ) {
+			eles.css("opacity", 1);
+			eles.each(function() {
 				var $this = $(this);
 				var hauteurImg = $this.attr('data-height') ? $this.attr('data-height') : '400px';
 				if ($this.children('img').attr('src') !== undefined) {
@@ -98,11 +98,11 @@
 				//$(".entry-title").lettering();
 				$('body').addClass("loaded");
 				$('.banner').css("opacity", 1);
-				setXpandImages();
+				setXpandImages( $('.xpandimages') );
 				$(window).resize(function() {
 					waitForFinalEvent(function() {
 						// recalculer la hauteur entre les images
-						setXpandImages();
+						setXpandImages( $('.xpandimages') );
 					}, 500, "resize");
 				});
 
@@ -145,27 +145,22 @@
 					var $thisArticleSummary = $thisArticle.find(".entry-content");
 					$thisArticleSummary.addClass("loading");
 
-					setTimeout( function () {
-						$.get(link, function(data){
-							$(data).find(".entry-content").hide().appendTo($thisArticle).fadeIn(400);
+					$.get(link, function(data){
+						console.log("data : " + data);
+						$(data).find(".entry-content .more-span").nextAll().hide().appendTo($thisArticleSummary).fadeIn(400);
+						$thisArticleSummary.find(".more-link").remove();
+						$thisArticleSummary.removeClass("summary").addClass("full");
 
-							history.pushState( null, title, link);
+						history.pushState( null, title, link);
 
-							$thisArticleSummary.css("position", "absolute").fadeOut(300, function() { $(this).remove(); });
+						$thisArticleSummary.removeClass( "loading" );
 
-	//						history.pushState( null, title, link);
-
-							$thisArticle.find(".xpandimages").each(function() {
-								$(this).attr("target", "_blank");
-							});
-
-							prettyPrint();
-
-							setXpandImages();
-
+						$thisArticle.find(".xpandimages:not(:first-child)").each(function() {
+							$(this).attr("target", "_blank");
 						});
-					}, 800);
-
+						prettyPrint();
+						setXpandImages( $thisArticle.find(".xpandimages:not(:first-child)") );
+					});
 
 				});
 			}

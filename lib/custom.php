@@ -9,6 +9,12 @@ function remove_more_link_scroll( $link ) {
 }
 add_filter( 'the_content_more_link', 'remove_more_link_scroll' );
 
+function add_more_span_class( $content ) {
+    $content = preg_replace('/(more-[0-9]+)/', '$1" class="more-span', $content);
+    return $content;
+}
+add_filter( 'the_content', 'add_more_span_class');
+
 function the_title_trim($title) {
 	// Might aswell make use of this function to escape attributes
 	$title = attribute_escape($title);
