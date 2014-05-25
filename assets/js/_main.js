@@ -146,14 +146,14 @@
 					$thisArticleSummary.addClass("loading");
 
 					$.get(link, function(data){
-						console.log("data : " + data);
+
+						//console.log("data : " + data);
+
 						$(data).find(".entry-content .more-span").nextAll().hide().appendTo($thisArticleSummary).fadeIn(400);
 						$thisArticleSummary.find(".more-link").remove();
-						$thisArticleSummary.removeClass("summary").addClass("full");
+						$thisArticleSummary.removeClass("summary loading").addClass("full");
 
 						history.pushState( null, title, link);
-
-						$thisArticleSummary.removeClass( "loading" );
 
 						$thisArticle.find(".xpandimages:not(:first-child)").each(function() {
 							$(this).attr("target", "_blank");
