@@ -4,7 +4,7 @@
       <?php get_template_part('templates/entry-meta'); ?>
       <h1 class="entry-title"><?php the_title(); ?></h1>
     </header>
-    <div class="entry-content full">
+    <div id="post-<?php the_ID(); ?>" class="entry-content full">
       <?php the_content(); ?>
     </div>
     <footer>

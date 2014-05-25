@@ -133,6 +133,41 @@
 				$(".entry-content a.xpandimages").each(function() {
 					$(this).attr('href', $(this).parent(".entry-content").siblings("header").children("a").attr("href")).attr('target', '');
 				});
+
+
+				$(".main").on("click", ".entry-content a.more-link", function (e) {
+
+					e.preventDefault();
+					link = $(this).attr('href');
+					title = $(this).attr('title');
+
+					var $thisArticle = $(this).closest("article.post");
+					var $thisArticleSummary = $thisArticle.find(".entry-content");
+					$thisArticleSummary.addClass("loading");
+
+					setTimeout( function () {
+						$.get(link, function(data){
+							$(data).find(".entry-content").hide().appendTo($thisArticle).fadeIn(400);
+
+							history.pushState( null, title, link);
+
+							$thisArticleSummary.css("position", "absolute").fadeOut(300, function() { $(this).remove(); });
+
+	//						history.pushState( null, title, link);
+
+							$thisArticle.find(".xpandimages").each(function() {
+								$(this).attr("target", "_blank");
+							});
+
+							prettyPrint();
+
+							setXpandImages();
+
+						});
+					}, 800);
+
+
+				});
 			}
 		},
 		single: {
