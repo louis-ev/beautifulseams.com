@@ -2,7 +2,7 @@
   <header>
     <?php get_template_part('templates/entry-meta'); ?>
 	<a href="<?php the_permalink(); ?>">
-	    <h1 class="entry-title"><?php the_title(); ?></h1>
+	    <h2 class="entry-title"><?php the_title(); ?></h2>
 	</a>
   </header>
   <div class="entry-content summary">
