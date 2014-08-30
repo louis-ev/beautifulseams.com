@@ -145,6 +145,7 @@
 					var $thisArticleSummary = $thisArticle.find(".entry-content");
 					$thisArticleSummary.addClass("loading");
 
+/*
 					$.get(link, function(data){
 
 						//console.log("data : " + data);
@@ -159,8 +160,9 @@
 							$(this).attr("target", "_blank");
 						});
 						prettyPrint();
-						setXpandImages( $thisArticle.find(".xpandimages:not(:first-child)") );
+						setTimeout(function() { setXpandImages( $thisArticle.find(".xpandimages:not(:first-child)") ); });
 					});
+*/
 
 				});
 			}
