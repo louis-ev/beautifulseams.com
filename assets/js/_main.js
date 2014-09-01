@@ -136,6 +136,7 @@
 
 
 				$(".main").on("click", ".entry-content a.more-link", function (e) {
+/*
 
 					e.preventDefault();
 					link = $(this).attr('href');
@@ -145,7 +146,6 @@
 					var $thisArticleSummary = $thisArticle.find(".entry-content");
 					$thisArticleSummary.addClass("loading");
 
-/*
 					$.get(link, function(data){
 
 						//console.log("data : " + data);
