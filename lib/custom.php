@@ -33,3 +33,9 @@ function the_title_trim($title) {
 	return $title;
 }
 add_filter('the_title', 'the_title_trim');
+
+// tags autorisés pour l'accueil
+function custom_excerpt_allowed_tags() {
+    // Add custom tags to this string
+    return '<script>,<style>,<br>,<em>,<i>,<ul>,<ol>,<li>,<p>,<img>';
+}

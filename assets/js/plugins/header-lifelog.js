@@ -414,12 +414,6 @@ function howlongago(time_value) {
   var parsed_date = Date.parse(time_value);
   var relative_to = (arguments.length > 1) ? arguments[1] : new Date();
 
-  // pour faker (je log plus en ce moment, c'est insupportable sur plusieurs semaines mais j'aime bien le motif évolutif, alors je fais croire au système qu'on est le 12 mai 2013, à la même heure que la machine. Un genre de Groundhog Day en fait :)
-/*
-  relative_to.setDate(10);
-  relative_to.setMonth(4);
-*/
-
   var delta = parseInt((relative_to.getTime() - parsed_date) / 1000);
   var shortdate = time_value.substr(4,2) + " " + time_value.substr(0,3);
   delta = delta + (relative_to.getTimezoneOffset() * 60);

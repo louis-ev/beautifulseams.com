@@ -118,7 +118,7 @@
 					//alert(feeds);
 					var feedHTML = '';
 					var displayCounter = 1;
-					//console.log(feeds);
+					console.log(feeds);
 					drawHeader(feeds);
 				})
 				.error(function() {

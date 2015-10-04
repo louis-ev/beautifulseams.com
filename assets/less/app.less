@@ -32,7 +32,6 @@
 
 
 @phone: (@screen-tablet - 1);
-
 @phone-only:    ~"only screen and (max-width: 1023px)";
 @tablet:    ~"only screen and (min-width: @{screen-tablet})";
 @desktop:    ~"only screen and (min-width: @{screen-desktop})";
@@ -296,7 +295,7 @@ body.single.postid-681 {
 				font-weight: normal;
 				font-size: 4.6em;
 				line-height: .8em;
-				font-family: "futura-pt-condensed";
+				font-family: "futura-pt-condensed", sans-serif;
 				font-weight: 400;
 				letter-spacing: -.015em;
 
@@ -419,6 +418,7 @@ body.single.postid-681 {
 					  line-height: 1.5em;
 
 				  }
+
 
 				  figcaption {
 				  	font-size: .7em;
@@ -583,6 +583,9 @@ body.single.postid-681 {
 						background-position: 50% 50% !important;
 						background-repeat: no-repeat;
 						background-repeat: repeat;
+						-webkit-background-size: cover;
+						background-size: cover;
+
 						-webkit-transition: all .4s  ease-out;
 						-moz-transition: all .4s  ease-out;
 						transition: all .4s ease-out;
