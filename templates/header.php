@@ -1,6 +1,6 @@
 <header class="banner" role="banner">
   <div id="lifelog">
-    <a href="http://www.beautifulseams.com">
+    <a href="https://www.beautifulseams.com">
       <div height="170" width="422" id="lifelog-gen">
 	  </div>
       <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/loading-bottom2.gif" id="loader" />
@@ -8,7 +8,7 @@
     </a>
   </div>
   <div id="txtintro">
-	  <p>Blog of graphic and interaction designer&nbsp;<a href="http://www.louiseveillard.com" target="_blank">Louis&nbsp;Eveillard</a></p>
+	  <p>Blog of graphic and interaction designer&nbsp;<a href="https://www.louiseveillard.com" target="_blank">Louis&nbsp;Eveillard</a></p>
 	  <p>Write me: <a href="mailto:contact@beautifulseams.com" target="_blank">contact@beautifulseams.com</a></p>
   </div>
 </header>

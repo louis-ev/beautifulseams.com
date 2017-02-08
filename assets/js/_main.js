@@ -114,7 +114,7 @@
 
 				// afficher le loader
 				$('#loader').css('opacity', '1');
-				$.getJSON('http://www.beautifulseams.com/wp-content/themes/manifest_v1.1/get-tweets.php', function(feeds) {
+				$.getJSON('https://www.beautifulseams.com/wp-content/themes/manifest_v1.1/get-tweets.php', function(feeds) {
 					//alert(feeds);
 					var feedHTML = '';
 					var displayCounter = 1;
